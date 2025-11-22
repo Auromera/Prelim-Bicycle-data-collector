@@ -5,15 +5,15 @@
 using namespace std;
 
 class Node {
-public:
+private:
     string studentName;
     string startStation;
     string endStation;
     float distance;
     float CO2saved;
-
     Node* next;
 
+public:
     // Constructor
     Node(string name, string start, string end, float dist, float co2) {
         studentName = name;
@@ -23,6 +23,17 @@ public:
         CO2saved = co2;
         next = nullptr;
     }
+
+    // ======= GETTERS =======
+    string getStudentName() { return studentName; }
+    string getStartStation() { return startStation; }
+    string getEndStation() { return endStation; }
+    float getDistance() { return distance; }
+    float getCO2saved() { return CO2saved; }
+    Node* getNext() { return next; }
+
+    // ======= SETTERS =======
+    void setNext(Node* ptr) { next = ptr; }
 };
 
 #endif
